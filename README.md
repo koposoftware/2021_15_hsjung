@@ -9,10 +9,16 @@
 이에 소비패턴이 침체된 코로나19 상황속에서도 지속적으로 성장세를 보이는 중고거래 시장에 대하여 프로젝트를 진행하였습니다.
 
 # 2. 프로젝트 제안서
-
-프로젝트 제안서를 설명하세요. 발표자료와 동영상을 추가하세요. 시스템의 아키텍쳐 설명도 추가하세요.
-
-   <img src="하나마켓서비스.JPG"/>
+##  하나Market
+   <img src="1.JPG"/>
+   ##  프로젝트 개요
+   <img src="2.JPG"/>
+   ##  하나Market 서비스
+   <img src="4.JPG"/>
+   ##  하나Market 응용기술
+   <img src="5.JPG"/>
+   ##  아키텍처
+   <img src="6.JPG"/>
    [발표자료](/project.pptx)<br>
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
  
