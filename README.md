@@ -10,28 +10,28 @@
 
 
 # 2. 프로젝트 제안서
-##  하나Market
+##  1) 하나Market
    <img src="1.JPG"/>
    
-##  프로젝트 개요
+##  2) 프로젝트 배경
    <img src="2.JPG"/>
    
 # 3. 프로젝트 결과
 
-##  하나Market 서비스
+##  1)하나Market 서비스
    <img src="4.JPG"/>
    
-##  하나Market 응용기술
+##  2)하나Market 응용기술
    <img src="5.JPG"/>
    
-##  아키텍처
+##  3)아키텍처
    <img src="6.JPG"/>
    [발표자료](/project.pptx)<br>
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
    
 ## 발표 ppt 
    <img src="ppt.jpg"/>
-   [발표자료](하나마켓.V7.pptx)<br>
+   [발표자료](/하나마켓.V7.pptx)<br>
 
 ## 시연 동영상 
 
