@@ -24,8 +24,7 @@
 
 ## 시연 동영상 
 
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/watch?v=545i6T03EvU" frameborder="0"></iframe>
-
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/545i6T03EvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 # 4. 본인 소개
 
 본인 소개를 추가하세요
