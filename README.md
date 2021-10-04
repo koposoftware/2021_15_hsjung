@@ -1,10 +1,12 @@
-# 프로젝트 제목
+# 하나은행 손님 기반의 중고거래 플랫폼 하나 Market
 
 [프로젝트 홈페이지 - https://koposoftware.github.io/template/](https://koposoftware.github.io/template/)
 
 # 1. 프로젝트 개요
 
-이것은 프로젝트 개요입니다. 글과 그림을 이용하여 개요를 설명하세요.
+디지털 금융 규제제도가 개선 되며 많은 금융권에서 생활 밀착형 서비스를 확장하고 있습니다.
+
+이에 소비패턴이 침체된 코로나19 상황속에서도 지속적으로 성장세를 보이는 중고거래 시장에 대하여 프로젝트를 진행하였습니다.
 
 # 2. 프로젝트 제안서
 
@@ -22,19 +24,17 @@
 
 ## 시연 동영상 
 
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
+   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/watch?v=545i6T03EvU" frameborder="0"></iframe>
 
 # 4. 본인 소개
 
 본인 소개를 추가하세요
 
-|이름 |고길동|![gdKO](/gdko.jpg)|
+|이름 |정현석|![gdKO](/gdko.jpg)|
 |연락처 | gdko(@)kopo.ac.kr|
 |skill set| Frontend - HTML, CSS, Javascript|
 | | Backend - Java, Spring, Oracle|
-|자격증|  |
-|수상| |
-|특기사항|  TOEIC 990 |
+
 
 # 5. 기타
 그외 프로젝트를 더욱 설명할수 있는 것들을 추가하세요
