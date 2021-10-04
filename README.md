@@ -26,8 +26,6 @@
    
 ##  3)아키텍처
    <img src="6.JPG"/>
-   [발표자료](/project.pptx)<br>
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
    
 ## 발표 ppt 
    <img src="ppt.jpg"/>
@@ -40,7 +38,7 @@
 
 본인 소개를 추가하세요
 
-|이름 |정현석|![gdKO](/gdko.jpg)|
+|이름 |정현석|![gdKO](/face.jpg)|
 |연락처 | gdko(@)kopo.ac.kr|
 |skill set| Frontend - HTML, CSS, Javascript|
 | | Backend - Java, Spring, Oracle|
