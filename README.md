@@ -11,21 +11,21 @@
 # 2. 프로젝트 제안서
 ##  하나Market
    <img src="1.JPG"/>
-   ##  프로젝트 개요
+   
+##  프로젝트 개요
    <img src="2.JPG"/>
-   ##  하나Market 서비스
+   
+# 3. 프로젝트 결과
+프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
+##  하나Market 서비스
    <img src="4.JPG"/>
-   ##  하나Market 응용기술
+##  하나Market 응용기술
    <img src="5.JPG"/>
-   ##  아키텍처
+##  아키텍처
    <img src="6.JPG"/>
    [발표자료](/project.pptx)<br>
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
- 
-
-# 3. 프로젝트 결과
-프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
-
+   
 ## 발표 ppt 
    <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
 
