@@ -32,7 +32,7 @@
 
 ## 시연 동영상 
 
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/545i6T03EvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="100%" height="auto" src="https://www.youtube.com/embed/545i6T03EvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 # 4. 본인 소개
 
 본인 소개를 추가하세요
