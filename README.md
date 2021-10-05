@@ -1,6 +1,6 @@
 # 하나은행 손님 기반의 중고거래 플랫폼 하나 Market
 
-[프로젝트 홈페이지 - https://koposoftware.github.io/template/](https://koposoftware.github.io/template/)
+[프로젝트 홈페이지 - https://koposoftware.github.io/2021_15_hsjung/](https://koposoftware.github.io/2021_15_hsjung/)
 
 # 1. 프로젝트 개요
 산업간의 융복합이 가속화 되면서 업종간의 경계가 모호해 지는 빅블러 시대에 고객 기반이 갖춰진 빅테크 기업의 금융분야 진출로 기존의 금융 시장에 대한 불안감이 증폭되고 있습니다. 
