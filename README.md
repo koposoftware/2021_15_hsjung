@@ -55,7 +55,7 @@
 - Spring Scheduler : 매일 00시 낙찰된 상품 낙찰자에게 금액 전송
 - AES 256 : 사용자 비밀번호 암호화
 
-기대효과 및 보완점
+##기대효과 및 보완점
 ❍기대 효과
  - 새로운 수익원 구축 
     o 중고 시장의 성장성을 바탕으로 한 새로운 수익원 창출
@@ -75,16 +75,5 @@
  - 사기 대응 방안
  - 카드 무통장 입금 등 다양한 결제 시스템 구축
 
-# 홈페이지 설정
- 본인 repository에서 "Setting"를 들어가서 GitHub Pages에서 설정 변경.
-* Source
- Source에서 원하는 branch와 directory 설정한다. 
- 기본값은 master 에 root를 설정 
- Save 버튼 꼭 누른다.
- 
- * Theme Chooser
- theme을 변경하여 좀더 이쁜 홈페이지를 만든다.
-   
-   <img src="homepage.JPG"/><br>
-   
+
  
