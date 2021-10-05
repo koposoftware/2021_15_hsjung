@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="delivery.DeliveryDAO"><!--  패키지명(fullname) 적어도 됨 // 보통 적는 것이 보편적-->
+ 	
+ 	<insert id="addDelivery" parameterType="HyunseeugDelivery">
+ 			INSERT INTO HYUN_SEEUG_DELIVERY 
+ 				(HYUN_SEEUG_DELIVERY_SQ, PRODUCT_NAME, UNSONGJANG, PRODUCT_STATUS)
+ 			VALUES 
+ 				(HYUN_SEEUG_DELIVERY_SEQ.NEXTVAL, #{productName}, #{unsongjang},#{productStatus})
+ 	</insert>
+ 	
+ 	<select id="obtainDeliveryByUnsongJang" parameterType="HyunseeugDelivery" resultType="HyunseeugDelivery">
+ 	
+ 			SELECT HYUN_SEEUG_DELIVERY_SQ, PRODUCT_NAME, PRODUCT_STATUS, UNSONGJANG, INPUT_DATE, UPDATE_DATE 
+   			 FROM HYUN_SEEUG_DELIVERY 
+    		WHERE UNSONGJANG = #{unsongjang}
+ 	</select>
+ 	
+ 	<update id="modifyDeliveryStatus" parameterType="HyunseeugDelivery">
+ 	
+ 		UPDATE HYUN_SEEUG_DELIVERY SET PRODUCT_STATUS = #{productStatus} WHERE UNSONGJANG = #{unsongjang}
+ 	
+ 	</update>
+</mapper>
