@@ -1,4 +1,4 @@
-# 하나은행 손님 기반의 중고거래 플랫폼 <br>하나Market
+# 하나은행 손님 기반의 중고거래 플랫폼 <br> 하나Market
 [프로젝트 홈페이지 - https://koposoftware.github.io/2021_15_hsjung/](https://koposoftware.github.io/2021_15_hsjung/)
 
 # 1. 프로젝트 개요
