@@ -1,0 +1,38 @@
+﻿@charset "utf-8"; 
+
+html {height:100%;}
+body {position:relative; width:100%; height:100%; color:#666 ; font-family:'돋움', doutm,'굴림',gulim,sans-serif; font-size:12px; line-height:18px; background:none !important;}
+div, p, ol, ul, li, h1, h2, h3, h4, h5, h6, form, iframe, dl, dt, dd {}
+ul, ol {list-style:none;}
+table, th, td {font-size:12px; font-family:'돋움', doutm,'굴림',gulim,sans-serif; border-collapse:collapse; color:#6e6e6e;}
+caption {width:0; height:0; font-size:0; line-height:0; visibility:hidden;}
+textarea {font-size:12px; font-family:'돋움', doutm,'굴림',gulim,sans-serif; color:#6e6e6e;}
+select {font-family:'돋움', doutm,'굴림',gulim,sans-serif; color:#6e6e6e;}
+input {border-left:none; border-top:none; border-right:none; border-bottom:none; background:transparent; font-family:'돋움', doutm,'굴림',gulim,sans-serif; color:#6e6e6e;}
+fieldset {margin:0; padding:0; border:none;}
+button {margin:0; padding:0; border:none; background:none; font-family:'돋움', doutm,'굴림',gulim,sans-serif; font-size:12px; color:#6e6e6e; vertical-align:middle; overflow:visible; cursor:pointer;}
+em {font-style:normal;} 
+img {border:none;}
+label {cursor:pointer;}
+a {color:#6e6e6e; text-decoration:none;}
+a:hover {text-decoration:underline;}
+.hid, legend, hr {font-size:0; height:1px; left:-10000%; line-height:0; overflow:hidden; position:absolute; text-indent:-10000px; top:0; width:1px;}
+
+/* HANA_SKIP_NAVI_DIV */
+#HANA_SKIP_NAVI_DIV {position: absolute; left: 0; top:0; width: 100%; margin: 0 auto; z-index: 100;  } 
+
+#HANA_SKIP_NAVI_DIV, #HANA_SKIP_NAVI_DIV ul {height:0; width:100% !important;}
+#HANA_SKIP_NAVI_DIV a {position:absolute !important; top:-9999px !important; left:0; z-index:100 !important; 
+	width:100% !important; height:40px !important; background-color:#000 !important; line-height:40px !important; opacity:0.6; color:#fff !important; text-align:center !important;}
+#HANA_SKIP_NAVI_DIV a:focus, #HANA_SKIP_NAVI_DIV a:hover, #HANA_SKIP_NAVI_DIV a:active {top:0 !important;}
+
+
+#util {z-index: 98 !important;}
+
+/* location down menu */
+#HANA_CONTENTS_DIV #HANA_CONTENTS_DIV,
+.policies_box .inner {position: static;}
+
+
+.menuSrchWrap .srchBox button {width:30px !important; height:30px !important;}
+.menuSrchWrap .srchBox button.btnMenuSrch {right:0px !important;} 

@@ -1,0 +1,238 @@
+/**
+ * 
+ */
+//-- CCMEDIA Ad-Nibbler Tag Service 1.0
+//-- Copyright 2006 CCMEDIA, All Rights Reserved.
+// util start 
+
+var _BT_SVR = "";
+var _BT_TRK = "/cont/adm/dpi/ecrm_dpi.jsp";
+
+function _bt_run_track() {
+
+    var _BT_target = _BT_get_simple_tag ();
+    var img = new Image (); 
+    img.src = _BT_target;
+    img.onload = function () { return; };
+
+    if ( typeof(_BT_DEBUG_) !="undefined" && _BT_DEBUG_ == "on" ) alert ( _BT_target );
+
+}
+
+function _BT_getref () {
+    var v_ref = document.referrer;
+    if( (v_ref=='undefined')||( v_ref == '' )) {
+        eval(" try{ v_ref = parent.document.referrer ;}catch( _error){ v_ref = '';}");
+    }
+    return v_ref;
+} 
+
+function _BT_getcurtime () {
+    
+    var sdate = new Date();
+    var iday = sdate.getDay();
+    var imon = sdate.getMonth() + 1;
+    var iyea = sdate.getFullYear();
+    var ihour = sdate.getHours ();
+    var imin = sdate.getMinutes ();
+    var isec = sdate.getSeconds ();
+    var szret;
+    if(iday < 10) iday = '0' + iday;
+    if(imon < 10) imon = '0' + imon;
+    szret = iyea + "" + imon + "" + iday + (( ihour < 10) ? "0" : "" )  + ihour + (( imin < 10) ? "0" : "" ) + imin + (( isec < 10) ? "0" : "" ) + isec;
+    return szret;
+}
+
+function _BT_get_simple_inline ( uid, tab ) {
+
+    var _BT_dim= "&tagtype=1&scr=" + window.screen.width+'x'+window.screen.height;
+    var _BT_ref = _BT_getref ();
+    var _BT_time = _BT_getcurtime();
+    
+    var _BT_ret =  _BT_TRK + "?tz=" +  _BT_time + "&_BT_tab=" + tab
+                    +  "&url=" + escape(document.location) + _BT_dim + "&ref=" + escape ( _BT_ref )
+                    ;
+    var img = new Image (); 
+    img.src = _BT_ret;
+    img.onload = function () { return;};
+
+    if ( typeof(_BT_DEBUG_) !="undefined" && _BT_DEBUG_ == "on" ) alert ( _BT_ret); 
+    return _BT_ret;
+
+}
+
+function _BT_get_simple_tag () {
+
+    var _BT_dim= "&tagtype=1&scr=" + window.screen.width+'x'+window.screen.height;
+    var _BT_ref = _BT_getref ();
+    var _BT_time = _BT_getcurtime();
+    var _BT_ret =  _BT_TRK + "?tz=" +  _BT_time + _BT_dim + "&ref=" + escape ( _BT_ref ) + "&url=" + escape(document.location) 
+                    ;
+
+    return _BT_ret;
+
+}
+
+/**
+ * Form 객체로 부터 Query Url 생성
+ */
+function _BT_get(formId){
+    
+     var hmap = new Array();
+   var retUrl = '';
+   var type;
+
+   var fnode = document.getElementsByName(formId)[0];
+
+   
+   var tagList = ['input', 'select', 'textarea'];
+   for (var tagIdx = 0; tagIdx < tagList.length; tagIdx++){
+
+       var childList = fnode.getElementsByTagName(tagList[tagIdx]);
+
+
+       for (var idx=0; idx<childList.length; idx++ ){
+             var childElement = childList.item(idx);
+
+             try {
+                    var type = null;
+                    // 브라우져 별 parsing
+                    var agent = navigator.userAgent.toLowerCase();
+                    if (agent.indexOf("chrome") != -1
+                                         || agent.indexOf("firefox") != -1
+                                         || agent.indexOf("safari") != -1){
+                              type = childElement.attributes.item('type').nodeValue;
+                    }else if (agent.indexOf("msie") != -1){
+                              type = childElement.attributes.getNamedItem('type').nodeValue;
+                    }else {
+                        //  브라우저 유형이 어느 것에도 속하지 않는 경우, IE로 간주하여  설정
+                        if (childElement.attributes.getNamedItem('type')){
+                              type = childElement.attributes.getNamedItem('type').nodeValue;
+                        }
+                    }
+
+
+                    if (childElement.nodeName.toLocaleLowerCase() == 'input'){
+
+                              if (type.toLowerCase() == 'text'){
+                                  if(childElement.value != '') {
+                                        hmap.push(childElement.name + '=' + 'Y');
+                                  } else {
+                                        hmap.push(childElement.name + '=');
+                                  }
+                              }else if (type.toLowerCase() == 'password'){
+                                  if(childElement.value != '') {
+                                        hmap.push(childElement.name + '=' + 'Y');
+                                  } else {
+                                        hmap.push(childElement.name + '=');
+                                  }
+                              }else if ((type.toLowerCase() == 'checkbox' || type.toLowerCase() == 'radio')
+
+                                                    && childElement.checked){
+
+                                  if(childElement.value != '') {
+                                        hmap.push(childElement.name + '=' + 'Y');
+                                  } else {
+                                        hmap.push(childElement.name + '=');
+                                  }
+
+                              }else if (type.toLowerCase() == 'hidden'){
+                                         if ( typeof(_BT_TRACK_HIDDEN_) =="undefined" ||   _BT_TRACK_HIDDEN_  == false )  continue;
+                                         if(childElement.value != '') {
+                                                hmap.push(childElement.name + '=' + 'Y');
+                                          } else {
+                                                hmap.push(childElement.name + '=');
+                                          }
+                                  
+                              }
+
+                    }else if (childElement.nodeName.toLocaleLowerCase() == 'select'){
+                             if(childElement.value != '') {
+                                    hmap.push(childElement.name + '=' + 'Y');
+                              } else {
+                                    hmap.push(childElement.name + '=');
+                              }
+                                  
+
+                    }else if (childElement.nodeName.toLocaleLowerCase() == 'textarea'){
+                              if(childElement.value != '') {
+                                    hmap.push(childElement.name + '=' + 'Y');
+                              } else {
+                                    hmap.push(childElement.name + '=');
+                              }
+                    }
+
+             }
+             catch ( _e ) {
+
+             }
+       }
+       
+   }
+
+    for (var idx=0; idx < hmap.length; idx++){
+        retUrl += hmap[idx];
+        if (idx < hmap.length - 1)
+            retUrl += '&';
+    }
+    return retUrl;
+}
+
+function _bt_uinfo () {
+    var _f;
+    
+    var szret = "";
+    
+    try {
+
+        // 우선 임시로 설정합니다.
+        // 타 페이지로 이동시, 입력된 form 값을 획득하기 위함입니다.
+        // 현재, form 이름이 없어서, 로그가 남지 않고 있습니다.
+        // 정상 여부 확인 후 form 이름을 추가 또는 all 로 남겨 놓을 예정입니다.
+        // ccmedia service.
+        _BT_TRACK_FORM_ = "all";
+        
+        if ( typeof(_BT_TRACK_FORM_) =="undefined" ||  _BT_TRACK_FORM_ == "" )  return;
+
+        szret = "tagtype=2&";
+        
+        if ( _BT_TRACK_FORM_ == "all" ) {
+            
+            // step1.  make hash for whole forms.
+            var formList = document.forms;
+            for (var idx=0; idx<formList.length; idx++){
+                var form = formList[idx];
+                szret = szret + _BT_get(form.name) +"&";
+            }
+        }
+        else {
+            szret += _BT_get ( _BT_TRACK_FORM_ );
+        }
+        var _BT_target =  _BT_TRK + "?" + szret;
+        var imgu = new Image ();    
+        imgu.src = _BT_target;
+        imgu.onload = function () { return;};
+        if ( typeof(_BT_DEBUG_) !="undefined" && _BT_DEBUG_ == "on" ) alert ( _BT_target);
+    }
+    catch(_e){
+        
+        // alert ( _e );
+    };
+}
+
+function _ajaxTag(val){
+    var _BTCC = "dongbu.co.kr";
+
+    val = val+"&dongbu_lang_type="+lang_type;
+
+    if ( typeof(_BT_get_simple_inline ) != 'undefined' ) { _BT_get_simple_inline ( _BTCC, val ); };
+}
+
+try {
+	if ( typeof ( window.onbeforeunload ) != 'undefined' && window.onbeforeunload == null ) {
+		window.onbeforeunload = _bt_uinfo;
+	}
+}
+catch(_e){
+};
+

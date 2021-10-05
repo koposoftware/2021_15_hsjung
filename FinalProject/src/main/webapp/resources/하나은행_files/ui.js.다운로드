@@ -1,0 +1,227 @@
+jQuery(document).ready(function(){
+
+	/* gnb_moreView  */
+	var $moreView = jQuery('#gnb .smenu'),
+	$moreViewWrap = jQuery('#gnb .smenu dl');
+	jQuery(document).on('mouseover focus','.smenu .menuView',viewMenu2);	
+	jQuery(document).on('mouseenter focus','.smenu',viewMenu2);	
+	jQuery(document).on('mouseleave blur','#gnb .smenu',hideMenu2);	
+	
+	function viewMenu2(){		
+		$moreViewWrap.stop().animate({height:'220px'},100);
+		$moreView.addClass('on');
+	};
+	function hideMenu2(){
+		$moreViewWrap.stop().animate({height:'0'},0);
+		$moreView.removeClass('on');
+	};
+	
+	/* location  */	
+	jQuery('.locate > li').on('mouseenter focusin', function(){
+		jQuery(this).addClass('on');
+	});
+	jQuery('.locate > li').on('mouseleave focusout', function(){
+		jQuery(this).removeClass('on');
+	});
+
+     /* faq */
+	jQuery('.faqList li a').prop('title','질문에 대한 답변 보이기');
+	jQuery('.faqList li a').click(function() {
+		if (jQuery(this).parent().hasClass('') ) {	
+		    jQuery(this).next('.faqList li .answer').animate({marginTop:'29px',marginBottom:'14px'},200).css({'height':'auto','overflow':'visible'});
+			jQuery(this).prop('title','질문에 대한 답변 숨기기').parent().addClass('on').siblings().removeClass('on').children('.faqList li .answer').animate({marginTop:'0',marginBottom:'0'}).css({'margin-top':'0','margin-bottom':'0','height':'0','overflow':'hidden'});
+		} else  {
+		    jQuery(this).next('.faqList li .answer').animate({marginTop:'0',marginBottom:'0'},200).css({'margin-top':'0','margin-bottom':'0','height':'0','overflow':'hidden'});
+		    jQuery(this).prop('title','질문에 대한 답변 보이기').parent().removeClass('on');
+		}
+		return false;
+	});
+
+	/* tab menu*/
+	jQuery(".tabMenu li a").click(function(){
+		jQuery(this).parents().addClass('on').siblings().removeClass('on');
+	});	
+
+	/* smart app_nwallet */
+    jQuery(".nwalletUse .playList li").click(function(){
+		jQuery(this).addClass('on').siblings().removeClass('on');
+		return false;
+	});
+
+     /* main */	
+	jQuery('.pbkMain .link li a.language').prop('title','하위메뉴 보이기');
+	jQuery('.pbkMain .link li a.language').bind('click keyup', function() {
+	if (jQuery(this).parent().hasClass('') ) {	
+	jQuery(this).prop('title','하위메뉴 숨기기').parent().addClass('on').siblings().removeClass('on');
+	} else  {
+    jQuery(this).prop('title','하위메뉴 보이기').parent().removeClass('on');
+	}
+	return false;
+	});	
+	
+	jQuery('.pbkMain .link li ul li a').keyup(function() {
+	  jQuery(this).parent().addClass('on').siblings().removeClass('on');
+	});
+
+	jQuery('.pbkMain .mainSection li').click(function(){    
+		jQuery(this).addClass('on').siblings().removeClass('on');
+		jQuery('#header').removeClass('hidden');
+		jQuery('.pbkMain .link li').removeClass('on');
+		jQuery('.pbkMain #footer').addClass('hidden');
+	});
+	
+	jQuery('.pbkMain .mainSection li.login ul li').click(function(){			
+		jQuery('#header').addClass('hidden');	
+	});
+
+	jQuery('.pbkMain .mainSection li.login').click(function(){
+		jQuery('#header').addClass('hidden');
+		jQuery('.pbkMain .mainSection li .loginArea').addClass('on');
+	});
+
+	jQuery('.pbkMain .mainSection li .loginArea').click(function(){
+		document.location.href = '/common/login.do';
+		// jQuery(this).parent('.pbkMain .mainSection li').addClass('loginAfter');
+	});
+
+	jQuery('.pbkMain .mainSection li h2 a').click(function(){  
+	  jQuery(this).parent().parent().addClass('on').siblings().removeClass('on');
+	  jQuery('#header').removeClass('hidden');
+	  jQuery('.pbkMain .link li').removeClass('on');	
+	  jQuery('.pbkMain #footer').addClass('hidden');
+	});
+ 
+	jQuery('.pbkMain .mainSection li h2 a').keyup(function(){  
+	  jQuery(this).parent().parent().addClass('on').siblings().removeClass('on');
+	  jQuery('#header').removeClass('hidden');
+	  jQuery('.pbkMain .link li').removeClass('on');	
+	  jQuery('.pbkMain #footer').addClass('hidden');
+	});
+
+	jQuery('.pbkMain .mainSection li .detail ul li a').keyup(function(){  
+	  jQuery(this).parent().parent().parent().parent().addClass('on').siblings().removeClass('on');
+	});
+
+	jQuery('.pbkMain .mainSection li.login .detail ul li a').keyup(function(){			
+		jQuery('#header').addClass('hidden');	
+	});
+	
+	jQuery('.pbkMain .mainSection li .detail .banner a').keyup(function(){  
+	  jQuery(this).parent().parent().parent().addClass('on').siblings().removeClass('on');
+	});
+
+	jQuery('.pbkMain .mainSection li .detail button').keyup(function(){  
+	  jQuery(this).parent().parent().addClass('on').siblings().removeClass('on');
+	  jQuery('#header').addClass('hidden');
+	});
+
+    jQuery('.pbkMain .mainSection li.login h2 a').keyup(function(){  
+      jQuery('#header').addClass('hidden');
+	});
+
+    jQuery('.pbkMain #footer').keyup(function(){  
+		jQuery('.pbkMain .mainSection li').removeClass('on');
+	});
+
+    jQuery('.pbkMain #header ul li ul li a').keyup(function(){  
+		jQuery('.pbkMain .mainSection li').removeClass('on');
+		jQuery('#header').removeClass('hidden');
+		jQuery(this).parent().parent().parent().addClass('on');
+	});
+	
+	jQuery(document).mouseup(function (e){
+		var container = jQuery("#contents");
+		if( container.has(e.target).length === 0)
+		jQuery('.pbkMain .mainSection li').removeClass('on');
+		var jQuerylogin = jQuery('.mainSection li.login');
+		jQuery('.pbkMain #footer').removeClass('hidden');
+		if(jQuerylogin.hasClass('on')){
+			jQuery('#header').addClass('hidden');
+		} else {
+			jQuery('#header').removeClass('hidden');
+			jQuery('.pbkMain .link li').removeClass('on');
+		}
+	});
+
+	/* tipGuide */
+	jQuery('.tipClose button').on('click',function(){
+		jQuery('#tipWrap').removeClass('on');
+		jQuery('body').removeClass('fixed');
+	});		
+	
+	
+	jQuery(".btnClose").click(function(){
+		jQuery(".layerWrap").removeClass('on');
+		jQuery(".articleLayer").removeClass('on');	
+		jQuery('body').removeClass('fixed');	
+	});
+		
+});
+
+/* layer popup common */
+function layerPop (layerPopVal) {
+	jQuery('#' + layerPopVal).addClass('on');
+	jQuery('body').addClass('fixed');
+}
+
+/* text fade out */
+function OnEnter( field ) { if( field.value == field.defaultValue ) { field.value = ""; } } 
+function OnExit( field ) { if( field.value == "" ) { field.value = field.defaultValue; } } 
+
+/* open window center */
+function open_window(name, url, left, top, width, height, toolbar, menubar, statusbar, scrollbar, resizable)
+{
+  toolbar_str = toolbar ? 'yes' : 'no';
+  menubar_str = menubar ? 'yes' : 'no';
+  statusbar_str = statusbar ? 'yes' : 'no';
+  scrollbar_str = scrollbar ? 'yes' : 'no';
+  resizable_str = resizable ? 'yes' : 'no';
+  var windowLeft = (screen.width - width) / 2;  
+  var windowTop = (screen.height - height) / 2;
+  window.open(url, name, 'left='+ windowLeft +',top='+ windowTop+',width='+width+',height='+height+',toolbar='+toolbar_str+',menubar='+menubar_str+',status='+statusbar_str+',scrollbars='+scrollbar_str+',resizable='+resizable_str);
+}
+
+/* hide layer */
+function hide(id) { 
+ jQuery('#' + id).removeClass('on');
+}
+
+/* today close */
+function setCookie( name, value, expiredays ) {
+	var todayDate = new Date();
+	todayDate.setDate( todayDate.getDate() + expiredays );
+	document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+}
+function closeWin() {
+	if ( document.notice_form.todayClose.checked ){
+		setCookie( "maindiv", "done" , 1 );
+	}
+	document.getElementById("layerPopup").style.visibility = "hidden";
+}
+
+/* print */
+var app = {
+    getParam: function (url) {
+        var paramString = "param";
+        var returns = new Array();
+        var urlValue = url;
+        if (urlValue.indexOf("?") > -1) {
+            var getParam = urlValue.substr(urlValue.indexOf("?") + 1);
+            var parsedValue = getParam.split("&");
+            returns["url"] = urlValue.substring(0, urlValue.indexOf("?"));
+            for (var i = 0; i < parsedValue.length; i++) {
+                var aParam = parsedValue[i].split("=");
+                var idx = aParam[0];
+                returns[idx] = aParam[1];
+            }
+        }
+        return returns;
+    }
+};
+function hana_openWindow(b, c, d) {
+    window.open(b, c, d).focus();
+}
+function print_hana(target) {
+    hana_openWindow('../template/pop_print.html?target=' + target, 'print', 'width=760, height=700, menubar=no, resizable=no, location=no, status=no, toolbar=no ,scrollbars=yes');
+}
+

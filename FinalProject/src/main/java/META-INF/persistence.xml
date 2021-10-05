@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+	
+	<persistence-unit name="MarketPersistenceUnit">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>kr.ac.kopo.pojo.Account</class>
+		<class>kr.ac.kopo.pojo.AuctionProductImg</class>
+		<class>kr.ac.kopo.pojo.BankCode</class>
+		<class>kr.ac.kopo.pojo.Cart</class>
+		<class>kr.ac.kopo.pojo.ChatMessage</class>
+		<class>kr.ac.kopo.pojo.ChatMessageRoom</class>
+		<class>kr.ac.kopo.pojo.ChatMessageRoomJoin</class>
+		<class>kr.ac.kopo.pojo.HanaFile</class>
+		<class>kr.ac.kopo.pojo.History</class>
+		<class>kr.ac.kopo.pojo.HistoryLog</class>
+		<class>kr.ac.kopo.pojo.Member</class>
+		<class>kr.ac.kopo.pojo.Product</class>
+		<class>kr.ac.kopo.pojo.AuctionTransaction</class>
+		<class>kr.ac.kopo.pojo.ProductCategory</class>
+		<class>kr.ac.kopo.pojo.ProductImg</class>
+		<class>kr.ac.kopo.pojo.ProductTransaction</class>
+		<class>kr.ac.kopo.pojo.ProductTransactionReview</class>
+		<class>kr.ac.kopo.pojo.AuctionProduct</class>
+		<class>kr.ac.kopo.pojo.Photo</class>
+		<class>kr.ac.kopo.pojo.MemberInfo</class>
+		<class>kr.ac.kopo.pojo.MemberTier</class>
+		<class>kr.ac.kopo.pojo.HyunSeeugDelivery</class>
+		<class>kr.ac.kopo.pojo.PostIt</class>
+		
+	 <properties>
+	 	 <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+         <property name="javax.persistence.jdbc.user" value="scott"/>
+         <property name="javax.persistence.jdbc.password" value="tiger"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.119.119:1521/dink"/>
+ 		 
+         <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+         <property name="hibernate.format_sql" value="true" />
+         <property name="hibernate.use_sql_comments" value="false" />
+         <!-- <property name="javax.persistence.sharedCache.mode" value="ALL"/>  -->
+      </properties>
+      
+	</persistence-unit>
+</persistence>
